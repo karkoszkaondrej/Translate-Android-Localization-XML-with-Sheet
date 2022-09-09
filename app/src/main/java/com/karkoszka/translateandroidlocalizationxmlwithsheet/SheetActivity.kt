@@ -23,7 +23,7 @@ class SheetActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Get the ViewModel
-        viewModel = ViewModelProvider(this).get(SheetViewModel::class.java)
+        viewModel = ViewModelProvider(this)[SheetViewModel::class.java]
 
         // Xml uri should be stored in the ViewModel; put it there then display
         val xmlUriExtra = intent.getStringExtra(KEY_XML_URI)
@@ -32,7 +32,7 @@ class SheetActivity : AppCompatActivity() {
            binding.editText.setText(readTextFromUri(xmlUri))
         }
 
-//        binding.goButton.setOnClickListener { viewModel.applyBlur(blurLevel) }
+        binding.goButton.setOnClickListener { viewModel.applyConversion() }
 
         // Setup view output image file button
         binding.seeFileButton.setOnClickListener {
