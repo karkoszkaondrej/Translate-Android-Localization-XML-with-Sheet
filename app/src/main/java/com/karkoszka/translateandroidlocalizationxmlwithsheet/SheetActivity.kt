@@ -3,6 +3,7 @@ package com.karkoszka.translateandroidlocalizationxmlwithsheet
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -30,6 +31,8 @@ class SheetActivity : AppCompatActivity() {
         viewModel.setXmlUri(xmlUriExtra)
         viewModel.xmlUri?.let { xmlUri ->
            binding.editText.setText(readTextFromUri(xmlUri))
+           binding.editText.setHorizontallyScrolling(true)
+           binding.editText.movementMethod = ScrollingMovementMethod()
         }
 
         binding.goButton.setOnClickListener { viewModel.applyConversion() }
@@ -56,11 +59,13 @@ class SheetActivity : AppCompatActivity() {
     @Throws(IOException::class)
     private fun readTextFromUri(uri: Uri): String {
         val stringBuilder = StringBuilder()
+        //todo add new lines
         contentResolver.openInputStream(uri)?.use { inputStream ->
             BufferedReader(InputStreamReader(inputStream)).use { reader ->
                 var line: String? = reader.readLine()
                 while (line != null) {
                     stringBuilder.append(line)
+                    stringBuilder.append(System.getProperty("line.separator"))
                     line = reader.readLine()
                 }
             }
