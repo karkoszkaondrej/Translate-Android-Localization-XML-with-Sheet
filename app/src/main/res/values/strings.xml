@@ -2,6 +2,9 @@
     <string name="app_name">Translate Android Localization XML with Sheet</string>
     <string name="select_xml">Select XML</string>
     <string name="set_permissions_in_settings"><![CDATA[Go to Settings -> Apps and Notifications -> Translate Android Localization XML with Sheet -> App Permissions and grant access to Storage.]]></string>
+    <string name="motivation_start">App for</string>
+    <string name="motivation_headline">translating localization</string>
+    <string name="motivation_end">of Android strings.xml</string>
 
     <!-- Buttons -->
     <string name="select_image">Select Image</string>

@@ -8,6 +8,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.DocumentsContract
 import android.provider.MediaStore
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannedString
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -126,14 +129,14 @@ class SelectXmlActivity : Activity() {
     }
 
     private fun handleXmlRequestResult(intent: Intent) {
-            // The result data contains a URI for the document or directory that
-            // the user selected.
-            intent?.data?.also { uri ->
-                // Perform operations on the document using its URI.
-                val filterIntent = Intent(this, SheetActivity::class.java)
-                filterIntent.putExtra(KEY_XML_URI, uri.toString())
-                startActivity(filterIntent)
-            }
+        // The result data contains a URI for the document or directory that
+        // the user selected.
+        intent?.data?.also { uri ->
+            // Perform operations on the document using its URI.
+            val filterIntent = Intent(this, SheetActivity::class.java)
+            filterIntent.putExtra(KEY_XML_URI, uri.toString())
+            startActivity(filterIntent)
+        }
 
         Timber.e("Invalid input image Uri.")
         return

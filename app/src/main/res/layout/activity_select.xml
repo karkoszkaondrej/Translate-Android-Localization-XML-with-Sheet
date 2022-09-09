@@ -8,6 +8,16 @@
     tools:context="com.karkoszka.translateandroidlocalizationxmlwithsheet.SelectXmlActivity"
     tools:layout_editor_absoluteY="81dp">
 
+    <TextView
+        android:id="@+id/textView"
+        android:text="@string/motivation_headline"
+        app:fontFamily="casual"
+        app:layout_constraintBottom_toTopOf="@+id/selectXml"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/motivation_center" />
+
     <Button
         android:id="@+id/selectXml"
         android:layout_width="wrap_content"
@@ -19,6 +29,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/motivationStart"
+        android:text="@string/motivation_start"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/motivation_border" />
+
+    <TextView
+        android:id="@+id/motivationEnd"
+        android:text="@string/motivation_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        style="@style/motivation_border" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
