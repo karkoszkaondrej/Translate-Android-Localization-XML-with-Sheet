@@ -28,7 +28,9 @@ class SelectXmlActivity : Activity() {
 
     private val permissions = Arrays.asList(
         Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.INTERNET,
+        Manifest.permission.POST_NOTIFICATIONS
     )
 
     private var permissionRequestCount: Int = 0
